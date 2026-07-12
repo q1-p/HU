@@ -297,15 +297,17 @@
             transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .card-text-inner {
-            padding: 25px;
+            padding: 15px;
             border-top: 1px dashed rgba(141, 105, 63, 0.25);
-            background: rgba(185, 155, 115, 0.25); /* 💡 배경을 조금 더 어둡고 진한 갈색 톤으로 변경 */
-            line-height: 2.0;
-            font-size: 0.85rem; /* 💡 글자 크기를 1.05rem에서 0.95rem으로 축소 */
+            background: rgba(185, 155, 115, 0.25);
+            font-size: 0.85rem; 
+            line-height: 1.7;         
+            word-break: keep-all;    
+            letter-spacing: -0.3px;         
             text-align: justify;
             color: #110a05;
             font-family: 'RidiBatang', serif;
-            word-break: keep-all;
+        }
         }
 
         /* [NEW] 종족 전용 텍스트 카드 스타일 */
