@@ -1137,6 +1137,18 @@
         .card-titles h3 {
             font-size: 1.1rem !important; /* 모바일에서 제목 글씨가 너무 크면 줄바꿈되므로 살짝 축소 */
         }
+    }<style>
+    /* 화면 가로가 768px 이하일 때 모든 박스의 테두리를 무조건 1px로 만듦 */
+    @media (max-width: 768px) {
+        /* 코드가 가질 수 있는 거의 모든 박스 이름을 때려 박았습니다 */
+        .archive-card, .info-card, .card-image-frame, .card-click-trigger, .card-expand-content, .card-text-inner {
+            border-width: 1px !important;
+            border-style: solid !important;
+        }
+        /* 안쪽 여백도 강제로 줄이기 */
+        .card-text-inner, .info-card {
+            padding: 12px !important;
+        }
     }
 </style>
 </html>
