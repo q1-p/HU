@@ -109,7 +109,7 @@
         /* 책 컨테이너 */
         .book-container {
             flex: 1;
-            background-color: var(--book-cover);
+            background-color: var(--book-c);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0,0,0,0.6);
@@ -308,9 +308,8 @@
             color: #110a05;
             font-family: 'RidiBatang', serif;
         }
-        }
 
-        /* [NEW] 종족 전용 텍스트 카드 스타일 */
+        /* 종족 전용 텍스트 카드 스타일 */
         .info-card {
             margin-bottom: 25px;
             padding-bottom: 15px;
@@ -413,17 +412,27 @@
             .sidebar-nav li { margin: 0; }
             .sidebar-nav a { font-size: 0.95rem; padding: 5px 8px; }
             
-            /* 🚨 큰 갈색 외곽상자 및 이중 테두리 완벽 제거 */
+            /* 큰 갈색 외곽상자 및 이중 테두리 완벽 제거 */
             .book-container { background: transparent !important; border: none !important; padding: 0 !important; box-shadow: none !important; }
             .parchment-page { padding: 25px 15px !important; border: none !important; box-shadow: none !important; background-image: none !important; background-color: var(--parchment) !important; }
-            .parchment-page::before { display: none !important; } /* 내부 얇은 선 제거 */
+            .parchment-page::before { display: none !important; } 
             
-            /* 카드 구조 테두리 및 여백 슬림화 */
+            /* 카드 구조 테두리 및 여백 슬림화 + 모바일 줄바꿈 가독성 최적화 적용 */
             .archive-card { border: none !important; box-shadow: none !important; margin-bottom: 25px; background: rgba(0,0,0,0.02); }
             .card-image-frame { height: 180px; }
             .card-click-trigger { padding: 15px 10px; border-top: none !important; }
             .card-titles h3 { font-size: 1.2rem !important; }
-            .card-text-inner { padding: 15px 5px !important; border-top: 1px dashed rgba(141, 105, 63, 0.25) !important; }
+            
+            .card-text-inner { 
+                padding: 10px 5px 20px 5px !important; 
+                border-top: 1px dashed rgba(141, 105, 63, 0.25) !important;
+                font-size: 0.9rem !important;
+                line-height: 2.0 !important;
+                letter-spacing: -0.3px !important;
+                word-break: keep-all !important;
+                overflow-wrap: break-word !important;
+                text-align: left !important;
+            }
             
             /* 인트로 타이틀 모바일 축소 */
             .intro-title { font-size: 2rem; }
@@ -464,7 +473,7 @@
                     </div>
                     <div class="content">
                         <p>성회의 시대. 성회의 노래는 유일신 칸토의 응답으로서 세계에 축복을 내렸다. 사람들은 성회의 노래를 통해 마법을 사용하고, 정령과 소통했다.</p>
-                        <p>200여 년 전, 낙광은 이 모든 것을 앗아갔다. 마법이 사라지고, 정령이 뒤틀리기 시작했으며, 교회에선 기도 소리가 사라졌다. 수 년간 세계는 비명을 질렀다.</p> 
+                        <p>200여 년 전, 낙광은 이 모든 것을 앗아갔다. 마법사들이 사라지고, 정령이 뒤틀리기 시작했으며, 교회에선 기도 소리가 사라졌다. 수 년간 세계는 비명을 질렀.</p> 
                         <p>낙광 이후, 사람들은 정령을 피해 성채를 쌓아 올렸고, 세계는 서서히 조용해졌다. 다만 그 침묵이 평화를 의미하지는 않았다.</p>
                     </div>
                 </section>
@@ -855,7 +864,7 @@
                             </div>
                         </div>
 
-                      <div class="archive-card" data-faction="en_1.webp" data-faction="에리비엔테">
+                      <div class="archive-card" data-faction="에리비엔테">
                             <div class="card-image-frame">
                                 <img src="https://github.com/q1-p/im/blob/main/dw_1.webp?raw=true" alt="다위드">
                             </div>
@@ -1115,7 +1124,7 @@
         }
 
         function startReading() {
-            document.getElementById('intro-lay').classList.add('fade-out');
+            document.getElementById('intro-overlay').classList.add('fade-out');
         }
     </script>
 </body>
